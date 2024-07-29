@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sling</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="shop.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+          <ul class='nav-bar'>
+              <li class='logo'><a href='#'><img src='img/logo.png'/></a></li>
+              <li class="search">
+                <form action="#" method="GET">
+                  <div id="search-container">
+                    <input type="text" id="find" placeholder="Search" onkeyup="search()" />
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                </form>
+              </li>
+              <input type='checkbox' id='check' />
+              <span class="menu">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="shop"><a class="active" href="#">Shop</a>
+                    <div id="shop-menu">
+                    <ul id="list">
+                      <li><a href="macrame.html">Macrame Bags</a></li>
+                      <li><a class="active" href="sling.html">Sling Bags</a></li>
+                      <li><a href="tote.html">Tote Bags</a></li>
+                      <li><a href="wallet.html">Wallet Bags</a></li>
+                    </ul>
+                  </div>
+                  </li>
+                  <li><a href="about.html">About</a></li>
+                  <li class="account"><a href="">Account</a>
+                    <div id="acc-menu">
+                    <ul id="list">
+                      <li><a href="signup.html">Sign up</a></li>
+                      <li><a href="signin.html">Sign in</a></li>
+                    </ul>
+                  </div>
+                  </li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li>
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </li>
+                  <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+              </span>
+              <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+          </ul>
+      </nav>
+      </header>
+
+    <section class="hero" style="background-image:url('img/sling.png');">
+
+    </section>
+
+    <div class="heading">
+      <h1>SLING BAGS</h1>
+      <h3>Style in Motion</h3>
+    </div>
+    
+    <div class="filter-options">
+      <label for="price-filter">Sort by price:</label>
+      <select id="price-filter" onchange="sortProducts()">
+        <option value="low-to-high">Low to High</option>
+        <option value="high-to-low">High to Low</option>
+      </select>
+    </div>
+
+    <div class="shop-section"> 
+      <div class="box">
+        <div class="box-img" onclick="window.location.href='S1.html';">
+          <img src="Sling/S1.jpg">
+        </div>
+        <div class="box-content">
+          <h3>SwiftStash</h3>
+          <p>Rs. 1,499.00</p><br>
+          <div class="button">
+            <button id="cart" onclick="addToCart('SwiftStash', 1499.00, 'Sling/S1.jpg')" ondblclick="window.location.href='M5.html';">Add to cart</button>
+            <button id="buy" onclick="addToCart('SwiftStash', 1499.00, 'Sling/S1.jpg')" ondblclick="window.location.href='cart.html';">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img" onclick="window.location.href='S2.html';">
+          <img src="Sling/S2.jpg">
+        </div>
+        <div class="box-content">
+          <h3>RushRover</h3>
+          <p>Rs. 1,999.00</p><br>
+          <div class="button">
+            <button id="cart" onclick="addToCart('RushRover', 1999.00, 'Sling/S2.jpg')" ondblclick="window.location.href='S2.html';">Add to cart</button>
+            <button id="buy" onclick="addToCart('RushRover', 1999.00, 'Sling/S2.jpg')" ondblclick="window.location.href='cart.html';">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img" onclick="window.location.href='S3.html';">
+          <img src="Sling/S3.jpg">
+        </div>
+        <div class="box-content">
+          <h3>MetroGlide</h3>
+          <p>Rs. 999.00</p><br>
+          <div class="button">
+            <button id="cart" onclick="addToCart('MetroGlide', 999.00, 'Sling/S3.jpg')" ondblclick="window.location.href='S3.html';">Add to cart</button>
+            <button id="buy" onclick="addToCart('MetroGlide', 999.00, 'Sling/S3.jpg')" ondblclick="window.location.href='cart.html';">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img" onclick="window.location.href='S4.html';">
+          <img src="Sling/S4.jpg">
+        </div>
+        <div class="box-content">
+          <h3>VentureVista</h3>
+          <p>Rs. 1,299.00</p><br>
+          <div class="button">
+            <button id="cart" onclick="addToCart('VentureVista', 1299.00, 'Sling/S4.jpg')" ondblclick="window.location.href='S4.html';">Add to cart</button>
+            <button id="buy" onclick="addToCart('VentureVista', 1299.00, 'Sling/S4.jpg')" ondblclick="window.location.href='cart.html';">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S5.jpg">
+        </div>
+        <div class="box-content">
+          <h3>CityPulse</h3>
+          <p>Rs. 1,499.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S6.jpg">
+        </div>
+        <div class="box-content">
+          <h3>GlideGear</h3>
+          <p>Rs. 999.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S7.jpg">
+        </div>
+        <div class="box-content">
+          <h3>StreetSwift</h3>
+          <p>Rs. 1,299.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S8.jpg">
+        </div>
+        <div class="box-content">
+          <h3>ExpressMingle</h3>
+          <p>Rs. 1,499.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S9.jpg">
+        </div>
+        <div class="box-content">
+          <h3>VentureVibe</h3>
+          <p>Rs. 999.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S18.jpg">
+        </div>
+        <div class="box-content">
+          <h3>NomadWave</h3>
+          <p>Rs. 999.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S11.jpg">
+        </div>
+        <div class="box-content">
+          <h3>SlingSync</h3>
+          <p>Rs. 1,499.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S15.jpg">
+        </div>
+        <div class="box-content">
+          <h3>TrekEase</h3>
+          <p>Rs. 1,299.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S13.jpg">
+        </div>
+        <div class="box-content">
+          <h3>CityFlex</h3>
+          <p>Rs. 1,399.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S14.jpg">
+        </div>
+        <div class="box-content">
+          <h3>SwiftTrek</h3>
+          <p>Rs. 1,999.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S12.jpg">
+        </div>
+        <div class="box-content">
+          <h3>Metro Satchel</h3>
+          <p>Rs. 1,299.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="Sling/S17.jpg">
+        </div>
+        <div class="box-content">
+          <h3>Urban Glide</h3>
+          <p>Rs. 1,999.00</p><br>
+          <div class="button">
+            <button id="cart">Add to cart</button>
+            <button id="buy">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- filter -->
+    <script>
+      function sortProducts() {
+        var selectElement = document.getElementById("price-filter");
+        var selectedValue = selectElement.options[selectElement.selectedIndex].value;
+        var boxes = document.querySelectorAll(".shop-section .box");
+    
+        var sortedBoxes = Array.from(boxes).sort(function(a, b) {
+          var priceA = parseFloat(a.querySelector(".box-content p").textContent.replace("Rs. ", "").replace(",", ""));
+          var priceB = parseFloat(b.querySelector(".box-content p").textContent.replace("Rs. ", "").replace(",", ""));
+          
+          if (selectedValue === "low-to-high") {
+            return priceA - priceB;
+          } else {
+            return priceB - priceA;
+          }
+        });
+    
+        var shopSection = document.querySelector(".shop-section");
+        shopSection.innerHTML = "";
+        sortedBoxes.forEach(function(box) {
+          shopSection.appendChild(box);
+        });
+      }
+    </script>
+
+    <div class="footer">
+      <div class="logo">
+        <img src="img/logo.png" />
+      </div>
+      <div class="foot-panel">
+        <ul>
+          <h3>INFO</h3>
+          <br /><br />
+          <li><a href="about.html">About us</a></li>
+          <br />
+          <li><a href="contact.html">Contact Us</a></li>
+          <br />
+          <li><a href="#">Terms & Conditions</a></li>
+          <br />
+          <li><a href="#">Privacy Policy</a></li>
+          <br />
+        </ul>
+        <ul>
+          <h3>Dreamy Unprecedented</h3>
+          <br /><br />
+          <li><p>Address</p></li>
+          <br />
+          <li><p>Enquiry Number:000990</p></li>
+          <br />
+          <li><p>Working Hours: 9:00am to 9:00pm</p></li>
+          <br />
+          <li><p>Working Days: Monday to Saturday</p></li>
+          <br />
+        </ul>
+        <ul>
+          <p>Suscribe to stay updated</p>
+          <p>with the latest offers</p>
+          <p>and new collection launch</p>
+          <br /><br />
+          <div class="icon">
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.pinterest.com"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <!-- add to cart -->
+    <script>
+      function addToCart(productName, price, imageUrl) {
+     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+     const existingIndex = cartItems.findIndex((item) => item.productName === productName);
+ 
+     if (existingIndex !== -1) {
+       cartItems[existingIndex].quantity++;
+     } else {
+       cartItems.push({ productName, price, imageUrl, quantity: 1 });
+     }
+ 
+     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+     showAddedToCartImage(imageUrl); 
+     updateCartDisplay();
+   }
+ 
+   function updateCartDisplay() {
+     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+     const cartElement = document.getElementById('cart');
+     cartElement.innerHTML = '';
+ 
+     cartItems.forEach((item, index) => {
+       const cartItemElement = document.createElement('div');
+       cartItemElement.classList.add('cart-item');
+ 
+       cartItemElement.innerHTML = `
+         <img src="${item.imageUrl}" alt="${item.productName}">
+         <p>${item.productName} - $${item.price.toFixed(2)} - Quantity: ${item.quantity}</p>
+         <span class="delete-item" onclick="deleteCartItem(${index})">Delete</span>
+       `;
+ 
+       cartElement.appendChild(cartItemElement);
+     });
+   }
+   function showAddedToCartImage(imageUrl) {
+     const addedToCartImage = document.getElementById('added-to-cart-image');
+     addedToCartImage.src = imageUrl;
+     const cartOverlay = document.getElementById('cart-overlay');
+     cartOverlay.style.display = 'flex';
+ 
+     setTimeout(() => {
+       cartOverlay.style.display = 'none';
+     }, 2000);
+   }
+   onclick="window.location.href='M9.html';"
+   </script>
+
+  <!-- search bar -->
+  <script type="text/javascript">
+
+  function search() {
+  let filter = document.getElementById('find').value.toUpperCase();
+  let items = document.querySelectorAll('.box');
+
+  items.forEach(item => {
+      let titleElement = item.querySelector('h3');
+      let value = titleElement ? titleElement.innerText.toUpperCase() : '';
+      
+      if (value.indexOf(filter) > -1) {
+          item.style.display = "";
+      } else {
+          item.style.display = "none";
+      }
+  });
+}
+
+  </script>
+
+  </body>
+</html>

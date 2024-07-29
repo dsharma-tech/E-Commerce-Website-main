@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PoshPetal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="product.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+          <ul class='nav-bar'>
+              <li class='logo'><a href='#'><img src='img/logo.png'/></a></li>
+              <li class="search">
+                <form action="#" method="GET">
+                  <div id="search-container">
+                    <input type="text" id="find" placeholder="Search" onkeyup="search()" />
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                </form>
+              </li>
+              <input type='checkbox' id='check' />
+              <span class="menu">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="shop"><a class="active" href="#">Shop</a>
+                    <div id="shop-menu">
+                    <ul id="list">
+                      <li><a href="macrame.html">Macrame Bags</a></li>
+                      <li><a href="sling.html">Sling Bags</a></li>
+                      <li><a class="active" href="tote.html">Tote Bags</a></li>
+                      <li><a href="wallet.html">Wallet Bags</a></li>
+                    </ul>
+                  </div>
+                  </li>
+                  <li><a href="about.html">About</a></li>
+                  <li class="account"><a href="">Account</a>
+                    <div id="acc-menu">
+                    <ul id="list">
+                      <li><a href="signup.html">Sign up</a></li>
+                      <li><a href="signin.html">Sign in</a></li>
+                    </ul>
+                  </div>
+                  </li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li>
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </li>
+                  <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+              </span>
+              <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+          </ul>
+      </nav>
+      </header>
+
+      <div class="product-container">
+        <div>
+          <img id="product-image" src="Macrame/M4.jpg" alt="Product Image" />
+  
+          <div id="image-carousel">
+            <img
+              class="carousel-image"
+              src="Macrame/M3.jpg"
+              onclick="changeImage('Macrame/M3.jpg')"
+            />
+            <img
+              class="carousel-image"
+              src="Macrame/M4.jpg"
+              onclick="changeImage('Macrame/M4.jpg')"
+            />
+            <img
+              class="carousel-image"
+              src="Macrame/M8.jpg"
+              onclick="changeImage('Macrame/M8.jpg')"
+            />
+            <img
+              class="carousel-image"
+              src="Macrame/M11.jpg"
+              onclick="changeImage('Macrame/M11.jpg')"
+            />
+          </div>
+        </div>
+  
+        <div class="product-details">
+          <h3>Home / Macrame Bag</h3>
+          <br /><br />
+          <h1>BohoBraid Boutique Bag</h1>
+          <br /><br />
+          <h2>Rs. 999</h2>
+          <br /><br />
+          <input type="number" value="1" id="input" /><br /><br /><br />
+          <button id="cart">Add to Cart</button>
+          <button id="buy">Buy Now</button><br /><br /><br />
+          <p>
+            WovenWhimsy Satchels redefine the art of accessory craftsmanship,
+            seamlessly blending sophistication with bohemian charm. Crafted with
+            meticulous attention to detail, these bags showcase a distinctive
+            woven pattern that reflects a harmonious marriage of traditional
+            techniques and contemporary design.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div id="comments-section">
+        <h2>Feedback</h2>
+        <form id="commentForm">
+          <label for="comment-rating" id="rating">Rating:</label>
+          <div class="star-rating" id="comment-rating">
+            <input type="radio" name="rating" value="5" id="5-stars" required/><label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="4" id="4-stars" /><label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="3" id="3-stars" /><label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="2" id="2-stars" /><label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="1" id="1-star" /><label for="1-star" class="star">&#9733;</label>
+          </div>
+    
+          <label for="comment-text">Your Comment:</label>
+          <textarea id="comment-text" rows="4" required></textarea>
+    
+          <button type="button" onclick="submitComment()">Submit Comment</button>
+        </form>
+    
+        <div id="displayComments"></div>
+      </div>
+  
+      <script>
+        function changeImage(imageSrc) {
+          document.getElementById("product-image").src = imageSrc;
+        }
+      </script>
+
+    <div class="footer">
+      <div class="logo">
+        <img src="img/logo.png" />
+      </div>
+      <div class="foot-panel">
+        <ul>
+          <h3>INFO</h3>
+          <br /><br />
+          <li><a href="about.html">About us</a></li>
+          <br />
+          <li><a href="contact.html">Contact Us</a></li>
+          <br />
+          <li><a href="#">Terms & Conditions</a></li>
+          <br />
+          <li><a href="#">Privacy Policy</a></li>
+          <br />
+        </ul>
+        <ul>
+          <h3>Dreamy Unprecedented</h3>
+          <br /><br />
+          <li><p>Address</p></li>
+          <br />
+          <li><p>Enquiry Number:000990</p></li>
+          <br />
+          <li><p>Working Hours: 9:00am to 9:00pm</p></li>
+          <br />
+          <li><p>Working Days: Monday to Saturday</p></li>
+          <br />
+        </ul>
+        <ul>
+          <p>Suscribe to stay updated</p>
+          <p>with the latest offers</p>
+          <p>and new collection launch</p>
+          <br /><br />
+          <div class="icon">
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.pinterest.com"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <!-- search bar -->
+    <script type="text/javascript">
+
+      function search() {
+      let filter = document.getElementById('find').value.toUpperCase();
+      let items = document.querySelectorAll('.box');
+  
+      items.forEach(item => {
+          let titleElement = item.querySelector('h3');
+          let value = titleElement ? titleElement.innerText.toUpperCase() : '';
+          
+          if (value.indexOf(filter) > -1) {
+              item.style.display = "";
+          } else {
+              item.style.display = "none";
+          }
+      });
+  }
+  
+      </script>
+  </body>
+</html>

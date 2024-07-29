@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PearlPurse</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="product.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+          <ul class='nav-bar'>
+              <li class='logo'><a href='#'><img src='img/logo.png'/></a></li>
+              <li class="search">
+                <form action="#" method="GET">
+                  <div id="search-container">
+                    <input type="text" id="find" placeholder="Search" onkeyup="search()" />
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                </form>
+              </li>
+              <input type='checkbox' id='check' />
+              <span class="menu">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="shop"><a class="active" href="#">Shop</a>
+                    <div id="shop-menu">
+                    <ul id="list">
+                      <li><a href="macrame.html">Macrame Bags</a></li>
+                      <li><a href="sling.html">Sling Bags</a></li>
+                      <li><a href="tote.html">Tote Bags</a></li>
+                      <li><a class="active" href="wallet.html">Wallet Bags</a></li>
+                    </ul>
+                  </div>
+                  </li>
+                  <li><a href="about.html">About</a></li>
+                  <li class="account"><a href="">Account</a>
+                    <div id="acc-menu">
+                    <ul id="list">
+                      <li><a href="signup.html">Sign up</a></li>
+                      <li><a href="signin.html">Sign in</a></li>
+                    </ul>
+                  </div>
+                  </li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li>
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </li>
+                  <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+              </span>
+              <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+          </ul>
+      </nav>
+      </header>
+
+      <div class="product-container">
+        <div>
+          <img id="product-image" src="Wallet/W4.jpg" alt="Product Image" />
+  
+          <div id="image-carousel">
+            <img
+              class="carousel-image"
+              src="Wallet/W4.jpg"
+              onclick="changeImage('Wallet/W4.jpg')"
+            />
+            <img
+              class="carousel-image"
+              src="Wallet/W6.jpg"
+              onclick="changeImage('Wallet/W6.jpg')"
+            />
+            <img
+              class="carousel-image"
+              src="Wallet/W17.jpg"
+              onclick="changeImage('Wallet/W17.jpg')"
+            />
+            <img
+              class="carousel-image"
+              src="Wallet/W7.jpg"
+              onclick="changeImage('Wallet/W7.jpg')"
+            />
+          </div>
+        </div>
+  
+        <div class="product-details">
+          <h3>Home / Wallet</h3>
+          <br /><br />
+          <h1>IvoryInfinite</h1>
+          <br /><br />
+          <h2>Rs. 899</h2>
+          <br /><br />
+          <input type="number" value="1" id="input" min="1" /><br /><br /><br />
+          <button id="cart" onclick="addToCart('IvoryInfinite', 899.00, 'Wallet/W4.jpg')">Add to Cart</button>
+          <button id="buy" onclick="addToCart('IvoryInfinite', 899.00, 'Wallet/W4.jpg')" ondblclick="window.location.href='cart.html';" >Buy Now</button><br /><br /><br />
+          <p>
+            WovenWhimsy Satchels redefine the art of accessory craftsmanship,
+            seamlessly blending sophistication with bohemian charm. Crafted with
+            meticulous attention to detail, these bags showcase a distinctive
+            woven pattern that reflects a harmonious marriage of traditional
+            techniques and contemporary design.
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div id="comments-section">
+        <h2>Feedback</h2>
+        <form id="commentForm">
+          <label for="comment-rating" id="rating">Rating:</label>
+          <div class="star-rating" id="comment-rating">
+            <input type="radio" name="rating" value="5" id="5-stars" required/><label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="4" id="4-stars" /><label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="3" id="3-stars" /><label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="2" id="2-stars" /><label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" name="rating" value="1" id="1-star" /><label for="1-star" class="star">&#9733;</label>
+          </div>
+    
+          <label for="comment-text">Your Comment:</label>
+          <textarea id="comment-text" rows="4" required></textarea>
+    
+          <button type="button" onclick="submitComment()">Submit Comment</button>
+        </form>
+    
+        <div id="displayComments"></div>
+      </div>
+  
+      <script>
+        function changeImage(imageSrc) {
+          document.getElementById("product-image").src = imageSrc;
+        }
+      </script>
+
+    <div class="footer">
+      <div class="logo">
+        <img src="img/logo.png" />
+      </div>
+      <div class="foot-panel">
+        <ul>
+          <h3>INFO</h3>
+          <br /><br />
+          <li><a href="about.html">About us</a></li>
+          <br />
+          <li><a href="contact.html">Contact Us</a></li>
+          <br />
+          <li><a href="#">Terms & Conditions</a></li>
+          <br />
+          <li><a href="#">Privacy Policy</a></li>
+          <br />
+        </ul>
+        <ul>
+          <h3>Dreamy Unprecedented</h3>
+          <br /><br />
+          <li><p>Address</p></li>
+          <br />
+          <li><p>Enquiry Number:000990</p></li>
+          <br />
+          <li><p>Working Hours: 9:00am to 9:00pm</p></li>
+          <br />
+          <li><p>Working Days: Monday to Saturday</p></li>
+          <br />
+        </ul>
+        <ul>
+          <p>Suscribe to stay updated</p>
+          <p>with the latest offers</p>
+          <p>and new collection launch</p>
+          <br /><br />
+          <div class="icon">
+            <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.pinterest.com"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      function addToCart(productName, price, imageUrl) {
+     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+     const existingIndex = cartItems.findIndex((item) => item.productName === productName);
+ 
+     if (existingIndex !== -1) {
+       cartItems[existingIndex].quantity++;
+     } else {
+       cartItems.push({ productName, price, imageUrl, quantity: 1 });
+     }
+ 
+     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+     showAddedToCartImage(imageUrl); 
+     updateCartDisplay();
+   }
+ 
+   function updateCartDisplay() {
+     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+     const cartElement = document.getElementById('cart');
+     cartElement.innerHTML = '';
+ 
+     cartItems.forEach((item, index) => {
+       const cartItemElement = document.createElement('div');
+       cartItemElement.classList.add('cart-item');
+ 
+       cartItemElement.innerHTML = `
+         <img src="${item.imageUrl}" alt="${item.productName}">
+         <p>${item.productName} - $${item.price.toFixed(2)} - Quantity: ${item.quantity}</p>
+         <span class="delete-item" onclick="deleteCartItem(${index})">Delete</span>
+       `;
+ 
+       cartElement.appendChild(cartItemElement);
+     });
+   }
+   function showAddedToCartImage(imageUrl) {
+     const addedToCartImage = document.getElementById('added-to-cart-image');
+     addedToCartImage.src = imageUrl;
+     const cartOverlay = document.getElementById('cart-overlay');
+     cartOverlay.style.display = 'flex';
+ 
+     setTimeout(() => {
+       cartOverlay.style.display = 'none';
+     }, 2000);
+   }
+   onclick="window.location.href='M9.html';"
+   </script> 
+    <!-- search bar -->
+    <script type="text/javascript">
+
+      function search() {
+      let filter = document.getElementById('find').value.toUpperCase();
+      let items = document.querySelectorAll('.box');
+  
+      items.forEach(item => {
+          let titleElement = item.querySelector('h3');
+          let value = titleElement ? titleElement.innerText.toUpperCase() : '';
+          
+          if (value.indexOf(filter) > -1) {
+              item.style.display = "";
+          } else {
+              item.style.display = "none";
+          }
+      });
+  }
+  
+      </script>
+  </body>
+</html>
